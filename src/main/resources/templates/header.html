@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Hub</title>
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+          integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body>
+<header class="py-6 px-4 md:px-6 border-b bg-[#E0F7FE]">
+    <div class="container mx-auto flex justify-between items-center">
+
+        <a class="flex items-center gap-2" href="/" id="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" style="width: 1rem; height: 1rem; fill: #0EB4FC;">
+                <path d="M381 114.9L186.1 41.8c-16.7-6.2-35.2-5.3-51.1 2.7L89.1 67.4C78 73 77.2 88.5
+                87.6 95.2l146.9 94.5L136 240 77.8 214.1c-8.7-3.9-18.8-3.7-27.3 .6L18.3 230.8c-9.3 4.7-11.8 16.8-5
+                24.7l73.1 85.3c6.1 7.1 15 11.2 24.3 11.2l137.7 0c5 0 9.9-1.2 14.3-3.4L535.6 212.2c46.5-23.3 82.5-63.3
+                100.8-112C645.9 75 627.2 48 600.2 48l-57.4 0c-20.2 0-40.2 4.8-58.2 14L381 114.9zM0 480c0 17.7 14.3 32 32
+                 32l576 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 448c-17.7 0-32 14.3-32 32z"/>
+            </svg>
+            <i class="fa-solid fa-plane-departure"></i>
+            <span class="text-lg font-semibold text-[#0EB4FC]">WIT</span>
+        </a>
+
+        <div class="flex items-center gap-4">
+            <th:block th:if="${session.user == null}">
+                <a class="text-gray-500 hover:text-gray-900" href="#">
+                    로그인
+                </a>
+                <button class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-[#0EB4FC] text-white hover:bg-[#0BA0E0] h-9 rounded-md px-3">
+                    <a href="#">회원가입</a>
+                </button>
+            </th:block>
+            <th:block th:if="${session.user != null}">
+                <a class="text-gray-500 hover:text-gray-900" href="#">
+                    로그아웃
+                </a>
+                <button class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-[#0EB4FC] text-white hover:bg-[#0BA0E0] h-9 rounded-md px-3">
+                    <a href="#">마이페이지</a>
+                </button>
+            </th:block>
+
+
+        </div>
+    </div>
+</header>
+</body>
+</html>
